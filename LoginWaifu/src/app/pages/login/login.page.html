@@ -1,0 +1,69 @@
+<ion-title></ion-title>
+  <app-header>
+   
+  </app-header>
+
+
+<ion-content>
+  <ion-spinner  name="crescent" *ngIf="isLoading"></ion-spinner>
+  <div align="center">
+  <app-logo></app-logo>
+  
+  <h1>Inicia Sesión</h1>
+  </div>
+<form (submit)="onLogin(loginForm)" novalidate #loginForm="ngForm" *ngIf="!isLoading">
+    <ion-list>
+      <ion-item>
+        <ion-label position ="stacked"></ion-label>
+        <ion-input 
+        type="email"
+        placeholder="E-Mail"
+        name="email"       
+        ngModel
+        #userName="ngModel"
+        email
+        required
+        >
+    
+      </ion-input>
+      <ion-text color="danger" class="error-message" *ngIf="userName.invalid && userName.touched">Completá este dato para continuar.</ion-text>
+      </ion-item>
+     
+  
+      <ion-item>
+      
+        <ion-label position ="stacked"></ion-label>
+        <ion-input 
+        position="abosulute"        
+        type="password"
+        placeholder="Contraseña"
+        name="password"
+        required
+        ngModel
+        #Password="ngModel"
+        #input
+        maxlength="16"
+        ></ion-input>
+      <ion-text color="danger" class="error-message" *ngIf="Password.invalid && Password.touched">Completá este dato para continuar.</ion-text>
+         <ion-checkbox id="checkbox" float="right" ngModel name="pwCheckbox" #passwordCheckbox="ngModel" (click)="showPassword(input)"></ion-checkbox>          
+      </ion-item>
+  
+      
+      <ion-item lines='none'>
+        <p>No tienes cuenta?,<a routerLink='/signup'>
+         Crea una cuenta ahora
+        </a></p>
+      </ion-item>
+
+      <ion-button 
+      expand ="block" 
+      shape='round' 
+      color='success' 
+      type ='submit'
+      
+      >Iniciar Sesión</ion-button>
+    </ion-list>
+
+  </form>
+ 
+</ion-content>

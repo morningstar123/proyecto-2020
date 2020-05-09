@@ -1,0 +1,42 @@
+<ion-menu side="start" content-id="main-content">
+  <ion-content>
+    <ion-list>
+      <ion-item><h1>Hola</h1></ion-item>
+      <ion-item>
+        <ion-icon name="mail" slot="start"></ion-icon>
+        <ion-label>Inbox</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="paper-plane" slot="start"></ion-icon>
+        <ion-label>Outbox</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="heart" slot="start"></ion-icon>
+        <ion-label>Favorites</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="archive" slot="start"></ion-icon>
+        <ion-label>Archived</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="trash" slot="start"></ion-icon>
+        <ion-label>Trash</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="warning" slot="start"></ion-icon>
+        <ion-label>Spam</ion-label>
+      </ion-item>
+    <ion-item>
+    
+      <li *ngIf="!userIsAuthenticated">
+        <a routerLink='/login'><ion-button color="success">Login</ion-button></a></li>   
+      <li *ngIf="!userIsAuthenticated">
+        <a  routerLink='/signup'><ion-button >Signup</ion-button> </a> </li>   
+    <li *ngIf="userIsAuthenticated">
+      <ion-button fill="outline" color="danger"  (click)="onLogout()">Logout</ion-button>
+    </li>
+  
+    </ion-item>
+    </ion-list>
+  </ion-content>
+  </ion-menu>

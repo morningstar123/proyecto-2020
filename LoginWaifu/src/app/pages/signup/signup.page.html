@@ -1,0 +1,61 @@
+<app-header>
+    <ion-title>Crear cuenta</ion-title>
+  </app-header>
+
+
+<ion-content>
+  
+  <div align="center">
+    <app-logo></app-logo>
+    <h1>Crear cuenta</h1>
+    </div>
+    <ion-spinner name="crescent" *ngIf="isLoading"></ion-spinner>
+    <form (submit)="onSignup(signUpForm)"  #signUpForm="ngForm" *ngIf="!isLoading">
+      <ion-list>
+        <ion-item>
+          <ion-label position ="stacked"></ion-label>
+          <ion-input 
+          type="email"
+        placeholder="E-Mail"
+        name="email"       
+        ngModel
+        #userName="ngModel"
+        email
+        required
+          
+         ></ion-input>
+         <ion-text color="danger" class="error-message" *ngIf="userName.invalid && userName.touched">Completá correctamente este dato para continuar.</ion-text>
+        </ion-item>
+  
+  
+        <ion-item>
+          <ion-label position ="stacked"></ion-label>
+          <ion-input  
+          position="abosulute"        
+        type="password"
+        placeholder="Contraseña"
+        name="password"
+        required
+        ngModel
+        #Password="ngModel"
+        #input
+        maxlength="16"></ion-input>
+        <ion-text color="danger" class="error-message" *ngIf="Password.invalid && Password.touched">Completá este dato para continuar.</ion-text>
+          <ion-checkbox id="checkbox" float="right" ngModel name="pwCheckbox" #passwordCheckbox="ngModel" (click)="showPassword(input)"></ion-checkbox>   
+        </ion-item>
+        
+        <ion-item lines ='none'>
+          <p>Ya tienes cuenta?,</p><a routerLink='/login'>
+           <p> Inicia sesión ahora</p>
+          </a>
+        </ion-item>
+  
+        <ion-button 
+        type="submit" 
+        expand ="block" 
+        shape='round' 
+        color='success'>Crear cuenta</ion-button>
+      </ion-list>
+  
+    </form>
+</ion-content>
