@@ -1,0 +1,8 @@
+{
+  "name": "proyecto2020",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

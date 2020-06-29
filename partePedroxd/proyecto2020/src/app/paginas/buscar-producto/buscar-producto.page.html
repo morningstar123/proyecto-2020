@@ -1,0 +1,37 @@
+<ion-header class="ion-no-border">
+
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button text="Regresar" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Buscar Producto</ion-title>
+
+    <ion-buttons slot="end">
+
+      <ion-button color="primary" [routerLink]="['/carrito']">
+
+        <ion-icon name="cart" size="large"></ion-icon>
+
+      </ion-button>
+
+    </ion-buttons>
+
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Productos -->
+
+  <app-productos [productos]="productos" ></app-productos>
+
+  <!-- Infinite SCROLL -->
+
+  
+
+  
+
+</ion-content>

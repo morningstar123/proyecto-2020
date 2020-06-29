@@ -1,0 +1,30 @@
+<div class="producto">
+
+  <ion-item lines="none">
+    <ion-avatar slot="start">
+      <img src="/assets/avatars/laptop-icon2.png">
+    </ion-avatar>
+    <ion-label> 
+      <h5>{{ producto.marca }}</h5>
+      <h3>{{ producto.nombre }}</h3>
+      <h5>${{ producto.precio }}</h5>
+    </ion-label>
+  </ion-item>
+
+  <ion-slides pager="true" *ngIf="producto.imagen.length > 1">
+    <ion-slide *ngFor="let imagen of producto.imagen" class="image-slide" [style]=" (imagen | imagen: producto.nombre) | domSanitizer "> </ion-slide>
+  </ion-slides>
+
+  <ion-slides *ngIf="producto.imagen.length === 1" [options]="slideSoloOpts">
+    <ion-slide class="image-slide" [style]=" (producto[0] | imagen: producto.nombre) | domSanitizer "> </ion-slide>
+  </ion-slides>
+
+  <ion-item lines="none">
+    <ion-label text-wrap>
+      {{producto.descripcion}}
+    </ion-label>
+  </ion-item>
+  
+  <ion-button color="success" expand="full" shape="round" size="small" (click)="agregarAlCarrito( producto )"> Agregar al Carro</ion-button>
+
+</div>
