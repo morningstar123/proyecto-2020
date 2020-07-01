@@ -1,0 +1,7 @@
+{
+  "name": "Fakelibre",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

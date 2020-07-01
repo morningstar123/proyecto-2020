@@ -1,0 +1,31 @@
+<ion-header>
+  <app-header>
+   
+  </app-header>
+
+</ion-header>
+
+<ion-content>
+ <h1 align="center"> Bienvenido!</h1>
+ <ion-card>
+ 
+  
+    <ion-item *ngFor="let c of componentes"   
+              [routerLink]="c.redirectTo" detail>
+      <ion-icon color="tertiary" slot="start" [name]="c.icon"></ion-icon>        
+      <ion-label>{{ c.name }}</ion-label>
+    </ion-item>
+
+<ion-list>
+<ion-item *ngFor="let start of start"[routerLink]="['/start', start.id]">
+  <ion-avatar slot="start" >
+    <ion-img [src]="start.imageURL"></ion-img>
+  </ion-avatar>
+  <ion-label>
+    {{start.title}}
+  </ion-label>
+</ion-item>
+</ion-list>
+
+</ion-card>
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-menu side="start" content-id="main-content">
+  <ion-content>
+    <ion-toolbar color="primary">
+      <ion-title><h1>Hola</h1></ion-title>
+      </ion-toolbar>
+    <ion-list>
+       
+  <ion-item>Categorias</ion-item>
+        <ion-item>Recomendados</ion-item>
+        <ion-item>Historial de compras </ion-item>
+        <ion-item>Historial de busqueda</ion-item>
+         </ion-list>
+   
+    
+      <div *ngIf="!userIsAuthenticated">
+        <a routerLink='/login'><ion-button expand="block" color="primary">Inicio de sesión</ion-button></a>
+      </div>
+         
+        
+      <div class="no-underline" *ngIf="!userIsAuthenticated">  
+        <a  routerLink='/signup'><ion-button expand="block" color ="success"  >Crear cuenta</ion-button> </a> </div>
+      
+        
+    <div *ngIf="userIsAuthenticated">
+      <ion-button fill="outline" color="danger" expand="block" (click)="onLogout()">Cerrar sesión</ion-button>
+    </div>
+  
+   
+   
+  </ion-content>
+  </ion-menu>

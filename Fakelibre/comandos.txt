@@ -1,0 +1,52 @@
+(instalar express para server en node.js)
+npm install --save express
+
+(para modificaciones Node.js)
+npm install --save-dev nodemon  
+
+(inciar server nodemon con "start:server" agregado en package.json
+npm run start:server
+
+(parser de http request)
+npm install --save body-parser
+
+(installing mongodb al proyecto)
+npm install --save mongoose
+
+(instalar mongoose validador)
+npm install --save mongoose-unique-validator
+
+(installing bcrypt)
+npm install --save bcrypt
+
+(installing jsonwebtoken)
+npm install --save jsonwebtoken
+
+(generar componente ionic)
+ionic generate component/"name"
+
+
+
+//Añadidos despues del cruce
+npm install @capacitor/core @capacitor/cli
+
+ionic cordova plugin add cordova-plugin-camera
+
+ npm install @ionic-native/camera
+
+ npm install @ionic-native/file-transfer
+
+npm install ionic-native --save        
+
+ionic cordova plugin add cordova-plugin-file-transfer
+
+ npm i -g cordova
+
+npm install angular-pipes --save
+
+ npm i express-fileupload
+
+  npm update    
+  
+  npm install --save-dev @angular-devkit/build-angular
+
